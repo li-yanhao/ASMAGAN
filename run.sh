@@ -11,4 +11,4 @@ python main.py \
     --nodeName localhost \
     --checkpoint 350000 \
     --testScriptsName common_useage \
-    --specify_sytle 8 > stdout.txt
+    --specify_sytle 8  > stdout.txt
