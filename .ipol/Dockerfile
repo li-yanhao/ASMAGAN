@@ -16,16 +16,12 @@ RUN pip3 install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm g
 # RUN pip3 install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 # # copy the code to $bin
-ENV bin /workdir/bin/
-RUN mkdir -p $bin
-WORKDIR $bin
+# ENV bin /workdir/bin/
+# RUN mkdir -p $bin
+# WORKDIR $bin
 
-COPY . .
-RUN pwd
-RUN ls
 
-# Download big files
-RUN gdown 15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ -O ASMAfinal.zip
+
 
 # RUN wget "https://drive.google.com/file/d/15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ/view?usp=sharing" -O /workdir/bin/afm_cvpr2019/experiments/atrous/weight/model_final.pth.tar
 # RUN cd /workdir/bin/afm_cvpr2019/lib && make
@@ -43,3 +39,14 @@ ENV HOME /home/ipol
 # chmod 777 so that any user can use the HOME, in case the docker is run with -u 1001:1001
 RUN groupadd -g 1000 ipol && useradd -m -u 1000 -g 1000 ipol -d $HOME && chmod -R 777 $HOME
 USER ipol
+
+RUN mkdir -p $HOME
+WORKDIR $HOME
+
+COPY . .
+RUN pwd
+RUN ls
+
+
+# Download big files
+RUN gdown 15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ -O ASMAfinal.zip
