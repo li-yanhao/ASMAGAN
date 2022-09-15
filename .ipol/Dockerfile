@@ -36,9 +36,7 @@ RUN pip3 install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm g
 
 # # $HOME is writable by the user `ipol`, but 
 ENV HOME /home/ipol
-# chmod 777 so that any user can use the HOME, in case the docker is run with -u 1001:1001
-RUN groupadd -g 1000 ipol && useradd -m -u 1000 -g 1000 ipol -d $HOME && chmod -R 777 $HOME
-USER ipol
+
 
 RUN mkdir -p $HOME
 WORKDIR $HOME
@@ -53,3 +51,9 @@ RUN mkdir -p $HOME/train_logs
 RUN gdown 15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ -O $HOME/train_logs/ASMAfinal.zip
 WORKDIR $HOME/train_logs
 RUN unzip $HOME/train_logs/ASMAfinal.zip
+RUN rm $HOME/train_logs/ASMAfinal.zip
+
+
+# chmod 777 so that any user can use the HOME, in case the docker is run with -u 1001:1001
+RUN groupadd -g 1000 ipol && useradd -m -u 1000 -g 1000 ipol -d $HOME && chmod -R 777 $HOME
+USER ipol
