@@ -39,7 +39,7 @@ RUN gdown 15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ -O ASMAfinal.zip
 # ENV PATH $bin:$PATH
 
 # # $HOME is writable by the user `ipol`, but 
-# ENV HOME /home/ipol
-# # chmod 777 so that any user can use the HOME, in case the docker is run with -u 1001:1001
-# RUN groupadd -g 1000 ipol && useradd -m -u 1000 -g 1000 ipol -d $HOME && chmod -R 777 $HOME
-# USER ipol
+ENV HOME /home/ipol
+# chmod 777 so that any user can use the HOME, in case the docker is run with -u 1001:1001
+RUN groupadd -g 1000 ipol && useradd -m -u 1000 -g 1000 ipol -d $HOME && chmod -R 777 $HOME
+USER ipol
