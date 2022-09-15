@@ -20,8 +20,6 @@ from    utilities.sshupload import fileUploaderClass
 from    torch.backends import cudnn
 import  argparse
 
-os.chdir(os.path.dirname(__file__))
-
 def str2bool(v):
     return v.lower() in ('true')
 
