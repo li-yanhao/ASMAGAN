@@ -47,8 +47,9 @@ COPY . .
 
 
 # Download big files
-RUN mkdir -p $HOME/train_logs
-RUN gdown 15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ -O $HOME/train_logs/ASMAfinal.zip
+# RUN mkdir -p $HOME/train_logs
+# RUN gdown 15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ -O $HOME/train_logs/ASMAfinal.zip
+
 # WORKDIR $HOME/train_logs
 # RUN unzip $HOME/train_logs/ASMAfinal.zip
 # RUN rm $HOME/train_logs/ASMAfinal.zip
