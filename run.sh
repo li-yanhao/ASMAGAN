@@ -1,8 +1,8 @@
 
 # export HOME=/home/ipol
+exec_root=`pwd`
 
-# cd $HOME
-touch stdout.txt
+# touch stdout.txt
 
 pwd
 echo HELLO
@@ -23,3 +23,5 @@ python main.py \
     --testScriptsName common_useage \
     --specify_sytle 8 
     # >> $bin/stdout.txt
+
+mv output.png $exec_root
