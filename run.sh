@@ -4,15 +4,16 @@ exec_root=`pwd`
 
 # touch stdout.txt
 
-pwd
-echo HELLO
+# pwd
+# echo HELLO
 
 mkdir -p $bin/input/
 cp input_0.png $bin/input/
 
 cd $bin
-ls
-ls ./input/
+# ls
+# ls ./input/
+
 python main.py \
     --mode test --cuda 0 \
     --version ASMAfinal  \
@@ -21,7 +22,7 @@ python main.py \
     --nodeName localhost \
     --checkpoint 350000 \
     --testScriptsName common_useage \
-    --specify_sytle 8 
+    --specify_sytle 10
     # >> $bin/stdout.txt
 
 mv output.png $exec_root
