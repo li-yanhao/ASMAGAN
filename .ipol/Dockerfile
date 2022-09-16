@@ -16,12 +16,12 @@ RUN pip3 install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm g
 # RUN pip3 install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 # # copy the code to $bin
-# ENV bin /workdir/bin/
-# RUN mkdir -p $bin
-# WORKDIR $bin
+ENV bin /workdir/bin/
+RUN mkdir -p $bin
+WORKDIR $bin
 
 
-
+COPY . .
 
 # RUN wget "https://drive.google.com/file/d/15M1BpH2Q5kM9yARwXb2wSm8IKJIn-0CQ/view?usp=sharing" -O /workdir/bin/afm_cvpr2019/experiments/atrous/weight/model_final.pth.tar
 # RUN cd /workdir/bin/afm_cvpr2019/lib && make
@@ -35,15 +35,15 @@ RUN pip3 install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm g
 # ENV PATH $bin:$PATH
 
 # # $HOME is writable by the user `ipol`, but 
-ENV HOME /home/ipol
+# ENV HOME /home/ipol
 
 
-RUN mkdir -p $HOME
-WORKDIR $HOME
+# RUN mkdir -p $HOME
+# WORKDIR $HOME
 
-COPY . .
-RUN pwd
-RUN ls
+
+# RUN pwd
+# RUN ls
 
 
 # Download big files
