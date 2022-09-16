@@ -1,10 +1,13 @@
 
-export HOME=/home/ipol
+# export HOME=/home/ipol
 
-cd $HOME
+# cd $HOME
+touch stdout.txt
 
-echo HELLO > stdout.txt
+pwd >> stdout.txt
+echo HELLO >> stdout.txt
 
+cd $bin
 
 python main.py \
     --mode test --cuda 0 \
@@ -14,4 +17,5 @@ python main.py \
     --nodeName localhost \
     --checkpoint 350000 \
     --testScriptsName common_useage \
-    --specify_sytle 8  >> stdout.txt
+    --specify_sytle 8 
+    # >> $bin/stdout.txt
