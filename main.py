@@ -38,7 +38,7 @@ def getParameters():
     parser.add_argument('--testScriptsName', type=str, default='common')
     parser.add_argument('--nodeName', type=str, default='4card',choices=['localhost', '4card', '8card','lyh','loc','localhost'])
     parser.add_argument('--testBatchSize', type=int, default=1)
-    parser.add_argument('--totalImg', type=int, default=20)
+    parser.add_argument('--totalImg', type=int, default=1)
     parser.add_argument('--saveTestImg', type=str2bool, default=True)
     parser.add_argument('--testImgRoot', type=str, default="D:\\PatchFace\\PleaseWork\\Benchmark\\styletransfer")
     parser.add_argument('--specify_sytle', type=int, default=-1, help= 'When the value is -1, 11 painters styles are used for image(s) respectively for style transfer. '\

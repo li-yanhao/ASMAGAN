@@ -4,12 +4,13 @@
 # cd $HOME
 touch stdout.txt
 
-pwd >> stdout.txt
-echo HELLO >> stdout.txt
+pwd
+echo HELLO
+
+
+cp input_0.png $bin/input/
 
 cd $bin
-
-cp input_0.png input/
 
 python main.py \
     --mode test --cuda 0 \
