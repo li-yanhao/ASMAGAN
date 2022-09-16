@@ -9,11 +9,13 @@ echo HELLO >> stdout.txt
 
 cd $bin
 
+cp input_0.png input/
+
 python main.py \
     --mode test --cuda 0 \
     --version ASMAfinal  \
     --dataloader_workers 8   \
-    --testImgRoot ./bench/ \
+    --testImgRoot ./input/ \
     --nodeName localhost \
     --checkpoint 350000 \
     --testScriptsName common_useage \

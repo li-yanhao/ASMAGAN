@@ -51,7 +51,9 @@ def getParameters():
     parser.add_argument('--specifiedTestImages', nargs='+', help='selected images for validation', 
             # '000121.jpg','000124.jpg','000129.jpg','000132.jpg','000135.jpg','001210.jpg','001316.jpg', 
             default=[183947])
-    parser.add_argument('--testClasses', type=int, default=3)        
+    parser.add_argument('--testClasses', type=int, default=3)
+    parser.add_argument('--outputDir', type=str, default='./')
+
     return parser.parse_args()
 
 def create_dirs(sys_state):
@@ -187,7 +189,11 @@ Neural Rendering Special Interesting Group of SJTU
         sys_state["testImgRoot"]    = config.testImgRoot
         sys_state["specify_sytle"]    = config.specify_sytle
 
-        sys_state["testSamples"]    = os.path.join(env_config["testLogRoot"], sys_state["version"] , "samples")
+        # sys_state["testSamples"]    = os.path.join(env_config["testLogRoot"], sys_state["version"] , "samples")
+
+        # IPOL demo use
+        sys_state["testSamples"]    = config.outputDir
+
         if not os.path.exists(sys_state["testSamples"]):
             os.makedirs(sys_state["testSamples"])
         

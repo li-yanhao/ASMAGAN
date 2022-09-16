@@ -87,9 +87,15 @@ class Tester(object):
                     if self.config["cuda"] >=0:
                             content = content.cuda()
                     res, _ = Gen(content, condition_labels[specify_sytle, 0, :])
+                    
+                    # save_image(denorm(res.data),
+                    #     os.path.join(save_dir, '{}_step{}_s_{}.png'.format(img_name_real, self.config["checkpointStep"],StyleDir[specify_sytle])),
+                    #     nrow=n_class)  # ,nrow=self.batch_size)
+
+                    # IPOL demo use
                     save_image(denorm(res.data),
-                        os.path.join(save_dir, '{}_step{}_s_{}.png'.format(img_name_real, self.config["checkpointStep"],StyleDir[specify_sytle])),
-                        nrow=n_class)  # ,nrow=self.batch_size)
+                        os.path.join(save_dir, "output.png"),
+                        nrow=n_class)
 
         elapsed = time.time() - start_time
         elapsed = str(datetime.timedelta(seconds=elapsed))
