@@ -7,11 +7,12 @@ touch stdout.txt
 pwd
 echo HELLO
 
-
+mkdir -p $bin/input/
 cp input_0.png $bin/input/
 
 cd $bin
-
+ls
+ls ./input/
 python main.py \
     --mode test --cuda 0 \
     --version ASMAfinal  \
