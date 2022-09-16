@@ -3,7 +3,7 @@ export HOME=/home/ipol
 
 cd $HOME
 
-echo HELLO > stdout.txt
+echo HELLO > $HOME/stdout.txt
 
 
 # python main.py \
